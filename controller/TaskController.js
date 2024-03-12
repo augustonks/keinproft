@@ -23,6 +23,16 @@ const home = async (req, res) => {
     }
 };
 
+const userProfile = async (req, res) => {
+    try {
+        const currentUser = await users.findById(req.session.userId);
+        res.render("user-profile", { currentUser });
+    } catch (err) {
+        console.error("Error user profile: ", error);
+        res.status(500).send("Internal server error");
+    }
+};
+
 const loginPage = (req, res) => {
     res.render("login");
 };
@@ -103,4 +113,5 @@ module.exports = {
     signUpPage,
     signUpAuth,
     submitPost,
+    userProfile,
 };

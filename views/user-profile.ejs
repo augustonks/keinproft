@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/user-profile.css">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/home.css">
-    <script src="/script/home.js" defer></script>
 </head>
 <body>
     <%- include("./components/nav") %>
@@ -25,34 +24,6 @@
                 </div>
             </div>
         </section>
-        <section  id="post-section">
-            <h2>POSTS DA GALERA</h2>
-            <br>
-            <% if (postList.length < 1) { %>
-
-            <p>Ninguém postou nada :&lpar;</p>
-
-            <% } else { %>
-            <% postList.forEach((item) => { %>
-            
-            <%- include("./components/post-container", {item}) %>
-            
-            <% }) %>
-            <% } %>
-        </section>
     </main>
-    <div class="post-modal">
-        <div class="modal-container">
-            <span class="post-modal-close-btn" onclick="closePostModal()">&times;</span>
-            <div class="modal-content">
-                <h2>Escreva sua mensagem para o mundo!</h2>
-                <form class="post-form" action="/submit-post" method="post">
-                    <input type="text" name="title" placeholder="Título" maxlength="64" required>
-                    <textarea name="content" cols="30" rows="10" placeholder="Texto" maxlength="5000" required></textarea>
-                    <button type="submit">Postar</button>
-                </form>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
