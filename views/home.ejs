@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="/script/home.js" defer></script>
+</head>
+<body>
+    <nav>
+        <ul class="left-nav">
+            <li class="nav-logo"><a href="/home">COPIA BARATA DO TWITTER/REDDIT</a></li>
+        </ul>
+        <% if (!currentUser) { %>
+
+        <ul class="right-nav">
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">SignUp</a></li>
+        </ul>
+
+        <% } else { %>
+                
+            <p> <%- currentUser.name %> </p>
+
+        <% } %>
+    </nav>
+    <main>
+        <section id="user-area">
+            <div class="container" id="user-container">
+                <div class="form-user-details">
+                    <% if (currentUser) { %>
+                    <img class="user-avatar" id="self-user-avatar" src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo=" alt="avatar">
+                    <p> <%- currentUser.name %> </p>
+                    <% } else { %>
+                        <img class="user-avatar" id="self-user-avatar" src="https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg" alt="avatar">
+                    <% } %>
+                </div>
+                <div class="input-box-container">
+                    <input type="button" value="No que você está pensando?" onclick="openPostModal()" readonly>
+                </div>
+            </div>
+        </section>
+        <section  id="post-section">
+            <h2>POSTS DA GALERA</h2>
+            <br>
+            <% if (postList.length < 1) { %>
+
+            <p>Ninguém postou nada :&lpar;</p>
+
+            <% } else { %>
+            <% postList.forEach((item) => { %>
+
+            <div class="container" id="post-container">
+                <div class="post-avatar-area">
+                    <img class="user-avatar" id="post-user-avatar" src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo=" alt="avatar">
+                </div>
+                <div class="post-item">
+                    <div class="post-info-container">
+                        <h2> <%- item.title %> </h2>
+                        <span> by <a class="underlined" href="/"><%- item.user.name %></a>, <%- item.createdAt.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric' }) %> </span>
+                    </div>
+                    <div class="post-content">
+                        <p> <%- item.content %> </p>
+                    </div>
+                </div>
+            </div>
+
+            <% }) %>
+            <% } %>
+        </section>
+    </main>
+    <div class="post-modal">
+        <div class="modal-container">
+            <span class="post-modal-close-btn" onclick="closePostModal()">&times;</span>
+            <div class="modal-content">
+                <h2>Escreva sua mensagem para o mundo!</h2>
+                <form class="post-form" action="/submit-post" method="post">
+                    <input type="text" name="title" placeholder="Título" maxlength="64" required>
+                    <textarea name="content" cols="30" rows="10" placeholder="Texto" maxlength="5000" required></textarea>
+                    <button type="submit">Postar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
