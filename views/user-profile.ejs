@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/user-profile.css">
+    <link rel="stylesheet" href="/css/components/post-container.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,17 +13,29 @@
         <section id="user-area">
             <div class="container" id="user-container">
                 <div class="form-user-details">
-                    <% if (currentUser) { %>
                     <img class="user-avatar" id="self-user-avatar" src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo=" alt="avatar">
-                    <p> <%- currentUser.name %> </p>
-                    <% } else { %>
-                        <img class="user-avatar" id="self-user-avatar" src="https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg" alt="avatar">
-                    <% } %>
                 </div>
-                <div class="input-box-container">
-                    <input type="button" value="No que você está pensando?" onclick="openPostModal()" readonly>
+                <div class="user-info-container">
+                    <h2> <%- profileUser.name %> </h2>
+                    <p class="user-joined-date"> Joined <%- profileUser.createdAt.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric' }) %> </p>
+                    <p>"I like potatos!"</p>
                 </div>
             </div>
+        </section>
+        <section  id="post-section">
+            <h2 class="posts-call">POSTS DE <%- profileUser.name %> </h2>
+            <br>
+            <% if (postList.length < 1) { %>
+
+            <p>Ninguém postou nada :&lpar;</p>
+
+            <% } else { %>
+            <% postList.forEach((item) => { %>
+            
+            <%- include("./components/post-container", {item}) %>
+            
+            <% }) %>
+            <% } %>
         </section>
     </main>
 </body>

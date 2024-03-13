@@ -33,33 +33,29 @@ section {
 
 .container {
     width: 50%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     border: #02000c 4px solid;
     border-radius: 5px;
     padding: 15px;
     box-shadow: 0 5px 50px #02000c50;
-    
 }
 
 #user-container {
-    align-items: center;
+    align-items: start;
 }
 
-.input-box-container {
+.user-info-container {
     width: 64%;
+    color:#eff2f3;
 }
 
-.input-box-container input {
-    width: 100%;
-    background-color: #02000c;
-    color: #eff2f3;
-    cursor:pointer;
-    padding: 5px;
-    border-radius: 25px;
-    font-size: 1.05rem;
-    box-shadow: 0 0 50px #02000c50;
-    border: #f38c2b 2px solid;
+.user-joined-date {
+    margin-bottom: 25px;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #c4cedb;
 }
 
 .user-avatar {
@@ -71,4 +67,19 @@ section {
 #self-user-avatar {
     width: 80px;
     height: 80px;
+}
+
+
+
+section {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts-call {
+    text-transform: uppercase;
 }

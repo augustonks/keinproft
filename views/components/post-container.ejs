@@ -5,7 +5,15 @@
     <div class="post-item">
         <div class="post-info-container">
             <h2> <%- item.title %> </h2>
+
+            <% if (!profileUser) { %>
             <span> by <a class="underlined" href="/user/<%- item.user._id %>"><%- item.user.name %></a>, <%- item.createdAt.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric' }) %> </span>
+
+            <% } else { %>
+            <span> by <%- item.user.name %>, <%- item.createdAt.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric' }) %> </span>
+            
+            <% } %>
+
         </div>
         <div class="post-content">
             <p> <%- item.content %> </p>

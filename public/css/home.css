@@ -73,57 +73,8 @@ section {
     height: 80px;
 }
 
-#post-section h2, p {
-    color: #eff2f3;
-}
-
-#post-container {
-    overflow: hidden;
-    color: #eff2f3;
-    margin: 16px 0;
-    word-wrap: break-word;
-    justify-content: start;
-}
-
-.post-avatar-area {
-    width: 50px;
-}
-
-.post-item {
-    word-wrap: break-word;
-    width: 93%;
-}
-
-.post-info-container {
-    align-items: center;
-    margin-bottom: 10px;
-    word-wrap: break-word;
-}
-
-.post-info-container h2 {
-    font-size: 20px;
-}
-
-.post-info-container span {
-    font-size: 0.65rem;
-    font-style: italic;
-    color: #c4cedb;
-}
-
-.post-info-container span a {
-    color: #c4cedb;
-}
-
-#post-user-avatar {
-    width: 40px;
-    height: 40px;
-}
-
-.post-content {
-    background-color: #060420;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 15px;
+.posts-call {
+    text-transform: uppercase;
 }
 
 .post-modal {

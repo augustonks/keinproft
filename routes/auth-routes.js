@@ -5,7 +5,7 @@ const TaskController = require("../controller/TaskController");
 routes.get("/", TaskController.init);
 
 routes.get("/home", TaskController.home);
-routes.get("/user/:user", TaskController.userProfile);
+routes.get("/user/:userid", TaskController.userProfile);
 
 routes.get("/login", TaskController.loginPage);
 

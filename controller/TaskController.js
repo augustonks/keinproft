@@ -26,9 +26,14 @@ const home = async (req, res) => {
 const userProfile = async (req, res) => {
     try {
         const currentUser = await users.findById(req.session.userId);
-        res.render("user-profile", { currentUser });
+        const profileUser = await users.findById(req.params.userid);
+        const postList = await posts
+            .find({ user: req.params.userid })
+            .sort({ createdAt: -1 })
+            .populate("user");
+        res.render("user-profile", { currentUser, profileUser, postList });
     } catch (err) {
-        console.error("Error user profile: ", error);
+        console.error("Error loading user profile: ", err);
         res.status(500).send("Internal server error");
     }
 };
