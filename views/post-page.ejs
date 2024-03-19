@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/components/page-base.css">
+    <link rel="stylesheet" href="/css/post-page.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include("./components/nav.ejs")  %>
+    <main>
+        <section id="post-section">
+            <%- include("./components/post-container", {item: post, profileUser: null}) %>
+        </section>
+        <section id="comment-section">
+            <div class="comment-form-container">
+                <% if (currentUser) { %>
+                <form class="comment-form" action="/post/<%- post._id %>/add-comment" method="post">
+                    <input class="form-input" name="comment" type="text" placeholder="comntario" required>
+                    <button type="submit">Comentar</button>
+                </form>
+
+                <% } else { %>
+                    
+                <div id="login-msg-container">
+                    <p id="login-msg">Faça <a href="/login">Login</a> para comentar</p>
+                </div>
+
+                <% } %>
+            </div>
+            <% if (post.comments.length < 1) { %>
+
+            <p> Não há comentários </p>
+
+            <% } else { %>
+
+            <% post.comments.forEach((comment) => { %>
+
+            <%- include("./components/comment-container", {comment}) %>
+
+            <% })} %>
+        </section>
+    </main>
+</body>
+</html>

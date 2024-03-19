@@ -1,0 +1,54 @@
+.comment-form-container {
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.comment-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.comment-form input {
+    width: 80%;
+    border-radius: 15px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #060420;
+    color: #c4cedb;
+}
+
+.comment-form button {
+    width: 20%;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 250ms;
+    background-color: #f38c2b;
+    outline: none;
+    color: #c4cedb;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.comment-form button:hover {
+    transition: 250ms;
+    background-color: #f89f33;
+
+}
+
+#login-msg-container {
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #060420;
+    
+}
+
+#login-msg {
+    font-size: 1.2rem;
+}
+
+#login-msg a {
+    color: #38b6c0;
+}

@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
-const commentSchema = require("../models/comment-schema");
 
-const postSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true,
-    },
+const commentSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true,
@@ -15,13 +10,10 @@ const postSchema = new mongoose.Schema({
         ref: "users",
         required: true,
     },
-    comments: [commentSchema],
     createdAt: {
         type: Date,
         default: Date.now,
     },
 });
 
-const PostModel = new mongoose.model("posts", postSchema);
-
-module.exports = PostModel;
+module.exports = commentSchema;

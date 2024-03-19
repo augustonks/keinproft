@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" href="/css/components/container.css">
+    <link rel="stylesheet" href="/css/components/comment-container.css">
+</head>
+<div class="container" id="comment-container">
+    <div class="comment-avatar-area">
+        <img class="user-avatar" id="post-user-avatar" src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo=" alt="avatar">
+    </div>
+    <div class="comment-item">
+        <div class="comment-info-container">
+            <h3><a href="/user/<%- comment.user._id %>"><%- comment.user.name %></a> </h3>
+            <span><%- comment.createdAt.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric' }) %> </span>
+        </div>
+        <div class="comment-content">
+            <p> <%- comment.content %> </p>
+        </div>
+    </div>
+</div>

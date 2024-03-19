@@ -38,6 +38,40 @@ const userProfile = async (req, res) => {
     }
 };
 
+const postPage = async (req, res) => {
+    try {
+        let post = await posts
+            .findById(req.params.postid)
+            .populate("user")
+            .populate("comments.user");
+
+        post.comments.reverse();
+
+        const currentUser = await users.findById(req.session.userId);
+        res.render("post-page", { post, currentUser });
+    } catch (err) {
+        console.error("Error loading post: ", err);
+        res.status(500).send("Internal server error");
+    }
+};
+
+const addComment = async (req, res) => {
+    try {
+        const currentUser = await users.findById(req.session.userId);
+        const comment = {
+            content: req.body.comment,
+            user: currentUser,
+        };
+        const post = await posts.findById(req.params.postid);
+        post.comments.push(comment);
+
+        await post.save();
+    } catch (err) {
+        console.error("Error uploading comment: ", err);
+        res.status(500).send("Internal server error");
+    }
+};
+
 const loginPage = (req, res) => {
     res.render("login");
 };
@@ -119,4 +153,6 @@ module.exports = {
     signUpAuth,
     submitPost,
     userProfile,
+    postPage,
+    addComment,
 };

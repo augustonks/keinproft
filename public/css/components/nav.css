@@ -1,18 +1,22 @@
 nav {
     background-color: #02000c;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    align-items: center;
     padding: 20px 0;
     box-shadow: 0 5px 50px #02000c50;
 }
 
-nav ul {
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+    margin: 0 auto;
+}
+
+.nav-container ul {
     list-style-type: none;
 }
 
-nav a {
+.nav-container a {
     text-decoration: none;
     color: aliceblue;
 }
@@ -20,9 +24,7 @@ nav a {
 .nav-logo {
     font-size: 20px;
     font-weight: 800;
-    margin-left: 20px;
     letter-spacing: 1px;
-    padding: 5px;
     border-radius: 10px;
     text-shadow: 0 5px 50px #f8e9a125;
 }

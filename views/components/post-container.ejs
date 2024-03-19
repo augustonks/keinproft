@@ -1,10 +1,14 @@
+<head>
+    <link rel="stylesheet" href="/css/components/container.css">
+    <link rel="stylesheet" href="/css/components/post-container.css">
+</head>
 <div class="container" id="post-container">
     <div class="post-avatar-area">
         <img class="user-avatar" id="post-user-avatar" src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo=" alt="avatar">
     </div>
     <div class="post-item">
         <div class="post-info-container">
-            <h2> <%- item.title %> </h2>
+            <h2><a href="/post/<%- item._id %>"><%- item.title %></a> </h2>
 
             <% if (!profileUser) { %>
             <span> by <a class="underlined" href="/user/<%- item.user._id %>"><%- item.user.name %></a>, <%- item.createdAt.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric' }) %> </span>

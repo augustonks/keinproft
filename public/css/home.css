@@ -1,47 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
-}
-
-body {
-    width: 100%;
-    background-color: #08243c;
-    overflow-x: hidden
-}
-
-section {
-    padding: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-user-details {
-    text-align: center;
-    background-color: #02000c;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.form-user-details p {
-    color: #eff2f3;
-}
-
-.container {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    border: #02000c 4px solid;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 5px 50px #02000c50;
-    
-}
-
 #user-container {
     align-items: center;
 }
@@ -60,12 +16,6 @@ section {
     font-size: 1.05rem;
     box-shadow: 0 0 50px #02000c50;
     border: #f38c2b 2px solid;
-}
-
-.user-avatar {
-    object-fit: cover;
-    border-radius: 50%
-    
 }
 
 #self-user-avatar {

@@ -1,0 +1,39 @@
+#comment-container {
+    border: none;
+    box-shadow: none;
+    justify-content: start;
+}
+
+#comment-container:nth-child(odd) {
+    background-color: #040f2c;
+}
+
+.comment-item {
+    margin-left: 15px;
+}
+
+.comment-info-container {
+    display: flex;
+    align-items: end;
+}
+
+.comment-info-container h3 a {
+    text-decoration: none;
+    color: #eff2f3;
+    margin-right: 5px;
+    font-size: 0.99rem;
+}
+
+.comment-info-container h3 a:hover {
+    text-decoration: underline;
+}
+
+.comment-info-container span {
+    font-size: .65rem;
+    color: #c4cedb;
+    font-style: italic;
+}
+
+.comment-content {
+    margin: 10px 0;
+}

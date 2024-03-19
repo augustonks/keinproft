@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/components/page-base.css">
     <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/components/post-container.css">
     <script src="/script/home.js" defer></script>
 </head>
 <body>
@@ -22,7 +22,11 @@
                     <% } %>
                 </div>
                 <div class="input-box-container">
+                    <% if (currentUser) { %>
                     <input type="button" value="No que você está pensando?" onclick="openPostModal()" readonly>
+                    <% } else { %>
+                    <a href="/signup"><input type="button" value="No que você está pensando?" readonly></a>
+                    <% } %>
                 </div>
             </div>
         </section>
