@@ -18,7 +18,7 @@
                 </div>
                 <div class="user-info-container">
                     <h2> <%- profileUser.name %> </h2>
-                    <p class="user-joined-date"> Joined <%- profileUser.createdAt.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric' }) %> </p>
+                    <p class="user-joined-date"> Joined <%- profileUser.createdAt.toLocaleDateString('en-US', {day: "numeric", weekday: 'long', year: 'numeric', month: 'long',}) %> </p>
                     <p>"I like potatos!"</p>
                 </div>
             </div>

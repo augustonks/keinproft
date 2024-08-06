@@ -63,6 +63,11 @@ form {
     color: #a6aaca;
 }
 
+.form-group span {
+    font-size: 10px;
+    color: #a6aaca;
+}
+
 form button {
     background-color: #f38c2b;
     border-radius: 10px;

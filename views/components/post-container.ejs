@@ -11,10 +11,10 @@
             <h2><a href="/post/<%- item._id %>"><%- item.title %></a> </h2>
 
             <% if (!profileUser) { %>
-            <span> by <a class="underlined" href="/user/<%- item.user._id %>"><%- item.user.name %></a>, <%- item.createdAt.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric' }) %> </span>
+            <span> by <a class="underlined" href="/user/<%- item.user._id %>"><%- item.user.name %></a>, <%- item.createdAt.toLocaleDateString('en-US', {day: "numeric", weekday: 'long', year: 'numeric', month: 'long',}) %> </span>
 
             <% } else { %>
-            <span> by <%- item.user.name %>, <%- item.createdAt.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric' }) %> </span>
+            <span> by <%- item.user.name %>, <%- item.createdAt.toLocaleDateString('en-US', {day: "numeric", weekday: 'long', year: 'numeric', month: 'long',}) %> </span>
             
             <% } %>
 
